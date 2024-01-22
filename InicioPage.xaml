@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen.InicioPage"
+             Title="InicioPage">
+    <VerticalStackLayout >
+        <Image  
+         
+                HeightRequest="70"
+                HorizontalOptions="Fill"
+                BackgroundColor="DarkRed" />
+
+        <Button x:Name="CrearBtn"
+         Text="Crear"
+         CornerRadius="50"
+         HorizontalOptions="Center"
+         FontSize="20"
+         BackgroundColor="darkRed"
+         Clicked="Btn_Crear"
+         Margin="0,10" />
+
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label FontAttributes="Bold"
+                   Text="Productos"
+                   FontSize="30"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   TextColor="DarkRed" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+            <TableView HorizontalOptions="CenterAndExpand">
+                <TableRoot>
+                    <TableSection Title="Ingrese los datos: "
+                                  TextColor="Black">
+                        <EntryCell x:Name="Nombre"
+                                   Placeholder="Nombre"
+                                   LabelColor="Black"
+                                  
+                                   HorizontalTextAlignment="Center" />
+                        <EntryCell x:Name="Estado"
+                                   Placeholder="Estado"
+                                   LabelColor="Black"
+                                 
+                                   HorizontalTextAlignment="Center" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </HorizontalStackLayout>
+
+        <Button x:Name="BuscarBtn"
+                Text="Buscar"
+                CornerRadius="50"
+                HorizontalOptions="Center"
+                FontSize="20"
+                BackgroundColor="darkRed"
+                Clicked="Btn_Buscar"
+                Margin="0,10" />
+
+        <ListView x:Name="ListaTareas"
+                  RowHeight="120"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Padding="10"
+                                     Spacing="10"
+                                     BackgroundColor="White">
+                           
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal"
+                                             Spacing="10">
+                                    <Label Text="ID:"
+                                           FontSize="15"
+                                           TextColor="Gray" />
+                                    <Label Text="{Binding Nombre}"
+                                           FontSize="15"
+                                           TextColor="Black" />
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal"
+                                             Spacing="10">
+                                    <Label Text="Nombre:"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="Gray" />
+                                    <Label Text="{Binding Estado}"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="Black" />
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal"
+                                             Spacing="10">
+                                    <Label Text="Color:"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="Gray" />
+                                    <Label Text="{Binding Tarea}"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="Black" />
+                                </StackLayout>
+
+                             
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

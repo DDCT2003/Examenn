@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Examen.CrearPage"
+             Title="CrearPage">
+    <VerticalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+
+            <Label 
+                FontAttributes="Bold"
+                Text="Agregar Producto"
+                FontSize="30"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                TextColor="DarkRed"/>
+        </HorizontalStackLayout>
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Ingrese los datos para un nuevo producto:" TextColor="DarkRed"  >
+                    <EntryCell x:Name="Nombre"
+                               
+                           Placeholder="Nombre"/>
+                    <EntryCell x:Name="Estado"
+                               
+                           Placeholder="Estado"
+                           />
+                    <EntryCell x:Name="Tarea"
+                               
+                           Placeholder="Tarea"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <Button Text="Guardar Producto"
+                Clicked="CrearButton" 
+                BackgroundColor="DarkRed"
+            />
+    </VerticalStackLayout>
+</ContentPage>
